@@ -1,4 +1,4 @@
-Dane van Dyck  
+Dane Van Dyck  
 132 West Davis Street  
 Decatur, GA 30030  
 408-892-4138  
@@ -23,19 +23,20 @@ Axcient provides end-to-end Disaster Recovery as a Service, beginning with the
 replication of protected devices and extending to file and folder recovery,
 restore point export and business continuity. The Storage and Recovery Cloud is
 the core of that service, exposing secure ReSTful interfaces to replication
-clients, end users and the UI. Core concepts are filesystems, virtualization,
-networking, deduplicated storage and web services.
+clients, end users and the UI. I have either contributed to or led the
+development teams responsible for building it. Core concepts are filesystems,
+virtualization, networking, deduplicated storage and web services.
 
 _leadership_
 
-- technical guidance of a team of five developers with mixed experience
+- technical guidance of a distributed team of five developers (plus 1 QA and 1
+  SRE) with mixed experience
 - technical oversight of Axcient's Storage and Recovery Cloud
 - thorough and continual code reviews
 - daily backlog refinement and prioritization
 - organization of weekly bug scrubs with support and QA
 - creation, maintenance and socialization of a multi-quarter roadmap with
   product and engineering leadership
-- weekly milestone meetings with product and engineering leadership
 - "automate everything" approach to regression testing supporting regular and
   frequent minor releases
 - "document everything" approach to development supporting rapid onboarding
