@@ -21,43 +21,40 @@ _technical leadership of Axcient's Storage and Recovery Cloud_
 
 Axcient provides end-to-end Disaster Recovery as a Service, beginning with the
 replication of protected devices and extending to file and folder recovery,
-restore point export and business continuity. The Storage and Recovery Cloud is
-the core of that service, exposing secure ReSTful interfaces to replication
-clients, end users and the UI. I have either contributed to or led the
-development teams responsible for building it. Core concepts are filesystems,
-virtualization, networking, deduplicated storage and web services.
+restore point export and site failover. The Storage and Recovery Cloud is the
+core of that service, exposing secure ReSTful interfaces to replication
+clients, end users and the UI. I have contributed to or led the development
+teams responsible for building it. The relevant technical domains are
+filesystems, virtualization, networking, deduplicated storage and web
+services.
 
-_leadership_
+_technical guidance_
 
-- technical guidance of a distributed team of five developers (plus 1 QA and 1
-  SRE) with mixed experience
-- technical oversight of Axcient's Storage and Recovery Cloud
-- thorough and continual code reviews
+- technical guidance of a distributed team of seven engineers of mixed
+  experience
+- architectural and operational oversight and codebase maintenance
+- regular feedback sessions with team members
+- documentation policies facilitating onboarding and transfer of information
+- test automation policies supporting a regular release cadence
+- devops policies supporting continuous integration without SREs
+- a continuous integration architecture supporting all-or-nothing deployments
+
+_planning_
+
+- maintenance of a multi-quarter roadmap with product and engineering
+  leadership
 - daily backlog refinement and prioritization
-- organization of weekly bug scrubs with support and QA
-- creation, maintenance and socialization of a multi-quarter roadmap with
-  product and engineering leadership
-- "automate everything" approach to regression testing supporting regular and
-  frequent minor releases
-- "document everything" approach to development supporting rapid onboarding
+- weekly escalation and bug scrubs with support and QA
+- issue tracking system workflow and board design
 
-_virtual private guest networks_
+_multi-tenant overlay networking_
 
-- virtual IPv4 guest networks embedded within an IPv6 host network
-- securely separated overlapping virtual IPv4 address spaces supporting
-  guest-internet and guest-guest traffic
-- DNS and DHCP services for virtual IPv4 network guests
-- IPSec VPN access to virtual IPv4 guest networks
-
-_distributed workqueue_
-
-- proposal, design and implementation of a distributed, asynchronous
-  workqueue
-- consistent task ownership across many workers without large-scale
-  consensus
-- modular task definitions and generic ReSTful client APIs
-- scalable "pull" architecture, long-polling workers
-- reassignment of stale tasks through a configurable TTL
+- overlay networking in a public cloud VPC without broadcast support
+- L3 over L3 overlay networking (without L2 tunnelling)
+- a networking fabric agnostic with respect to guest-host placement
+- overlay network support for egress and ingress traffic
+- overlay network support for DNS and DHCP services
+- netfilter, iptables, iproute2, IPv6, SIIT (EAM), network namespaces
 
 _zero-amplification block storage_
 
@@ -70,13 +67,6 @@ _zero-amplification block storage_
 - optimization of block index schema reducing aggregate storage size by
   approximately forty percent
 
-_live migration of block storage_
-
-- live migration to new block storage index and object storage formats of
-  petabytes of protected data for hundreds of customers
-- throughput approaching five gigabytes per second and hundreds of thousands of
-  block indices per second over thousands of concurrent nodes
-
 _virtual block device driver_
 
 - read-write network block device (NBD) backed by remote block storage
@@ -84,6 +74,21 @@ _virtual block device driver_
 - explicit prefetching of particular extents through socket commands
 - write barriers supporting consistent storage for e.g. virtual machines
 - multiple connections supporting virtual machine migration
+
+_live migration of block storage_
+
+- live migration to new block storage index and object storage formats of
+  petabytes of protected data for hundreds of customers
+- throughput approaching five gigabytes per second and hundreds of thousands of
+  block indices per second over thousands of concurrent nodes
+
+_distributed task queue_
+
+- a distributed, leaderless task queue
+- consistent, distributed and scalable task ownership protocol
+- modular task definitions and generic ReSTful client APIs
+- scalable "pull" architecture, long-polling workers
+- reassignment of stale tasks through a configurable TTL
 
 _file and folder recovery_
 
@@ -126,8 +131,8 @@ Whitewater was a NAS appliance backed by public object storage intending to
 replace tape as a backup software target. The Whitewater filesystem was
 transactional, supporting rollback on failure or unplanned shutdown. Memory
 arena management for caching and consistent garbage collection were primary
-concepts, as was deduplication. Most of my time was spent fixing bugs and
-addressing performance problems.
+concepts, as was deduplication. My primary responsibilities were addressing
+bugs and performance problems.
 
 _reduction of transaction log replay time in the event of a crash_
 
