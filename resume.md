@@ -102,6 +102,13 @@ _file and folder recovery_
 - pipelined prefetch/traversal/read stages front-loading I/O for archive
   downloads
 
+_disk image export_
+
+- rapid synthesis of protected disk images from block storage for download
+  and physical export
+- single stream throughput approaching one GB per second to a single S3 object
+- orchestration infrastructure supporting concurrent export of many disk images
+
 _build infrastructure_
 
 - design and implementation of packaging infrastructure
@@ -113,13 +120,6 @@ _build infrastructure_
 - addition of custom targets supporting complex artifact types
   * protobuf libraries, Python extensions, pypi package archives
 - derivation of artifact versions from VCS tags
-
-_disk image export_
-
-- rapid synthesis of protected disk images from block storage for download
-  and physical export
-- single stream throughput approaching one GB per second to a single S3 object
-- orchestration infrastructure supporting concurrent export of many disk images
 
 
 Riverbed Technology, Software Engineer, Summer 2011 to Fall 2012
@@ -173,7 +173,7 @@ _performance testing and automation for an early-stage cloud storage startup_
 
 Cirtas's Bluejet Cloud Storage Controller appliance implemented a network block
 storage service, exposing iSCSI LUNs backed by public object storage and
-APIs and UI to manage them. Relevant concepts were iSCSI, LBAs, deduplication
+APIs and UI to manage them. Relevant concepts were iSCSI, deduplication
 and snapshots. My work focused on performance testing, including data
 generation and metrics collection.
 
