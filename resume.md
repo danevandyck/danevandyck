@@ -58,14 +58,11 @@ _multi-tenant overlay networking_
 
 _zero-amplification block storage_
 
-- design and implementation of block storage index and object storage formats
-  supporting zero-amplification reads of content-addressable blocks
-- design and implementation of a block storage object keyspace supporting
-  unbounded read operation throughput
-- design and implementation of concurrent, performant C++ block
-  storage client interface and corresponding Python extension
-- optimization of block index schema reducing aggregate storage size by
-  approximately forty percent
+- block storage index and object formats supporting zero-amplification reads
+- a block storage object keyspace supporting unbounded operation throughput
+- a concurrent, performant C++ block storage client interface and Python
+  extension
+- block index schema optimization reducing aggregate storage size by 2x
 
 _virtual block device driver_
 
