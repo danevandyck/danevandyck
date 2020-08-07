@@ -37,7 +37,6 @@ _technical guidance_
 - documentation policies facilitating onboarding and transfer of information
 - test automation policies supporting a regular release cadence
 - devops policies supporting continuous integration without SREs
-- a continuous integration architecture supporting all-or-nothing deployments
 
 _planning_
 
@@ -50,11 +49,12 @@ _planning_
 _multi-tenant overlay networking_
 
 - overlay networking in a public cloud VPC without broadcast support
-- L3 over L3 overlay networking (without L2 tunnelling)
-- a networking fabric agnostic with respect to guest-host placement
+- overlay networking without tunnelling via IPv4/6 address translation
+- support for live additions of overlay network participants (guests)
+- support for live additions of network fabric participants (hosts)
+- agnostic with respect to the layout of guests on hosts
 - overlay network support for egress and ingress traffic
 - overlay network support for DNS and DHCP services
-- netfilter, iptables, iproute2, IPv6, SIIT (EAM), network namespaces
 
 _zero-amplification block storage_
 
@@ -85,10 +85,9 @@ _live migration of block storage_
 _distributed task queue_
 
 - a distributed, leaderless task queue
-- consistent, distributed and scalable task ownership protocol
-- modular task definitions and generic ReSTful client APIs
-- scalable "pull" architecture, long-polling workers
-- reassignment of stale tasks through a configurable TTL
+- consistent and responsive task ownership at scale
+- automatic detection and reassignment of dead tasks via keep-alives
+- ReSTful client APIs, long-polling workers
 
 _file and folder recovery_
 
@@ -120,6 +119,7 @@ _build infrastructure_
 - addition of custom targets supporting complex artifact types
   * protobuf libraries, Python extensions, pypi package archives
 - derivation of artifact versions from VCS tags
+- a continuous integration architecture supporting all-or-nothing deployments
 
 
 Riverbed Technology, Software Engineer, Summer 2011 to Fall 2012
@@ -277,7 +277,7 @@ _posix storage_
 
 _HTTP_
 
-- ReSTful interfaces, long polling
+- ReSTful interfaces, long-polling
 - connection pooling, websockets, ranged GET
 - HTTP status codes, redirection, retryable status codes
 - authentication, client certificate checking
