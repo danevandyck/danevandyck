@@ -64,6 +64,8 @@ _zero-amplification block storage_
   extension
 - block index schema optimization reducing aggregate storage size by 2x
 
+<div style="page-break-after: always"></div>
+
 _virtual block device driver_
 
 - read-write network block device (NBD) backed by remote block storage
@@ -118,6 +120,7 @@ _build infrastructure_
 - derivation of artifact versions from VCS tags
 - a continuous integration architecture supporting all-or-nothing deployments
 
+<div style="page-break-after: always"></div>
 
 Riverbed Technology, Software Engineer, Summer 2011 to Fall 2012
 ----------------------------------------------------------------
@@ -160,6 +163,7 @@ _design to revise an aspect of the core architecture_
 - sophisticated use of a transaction log to decouple the maintenance of
   persistent reference counts on block storage from the replication data path
 
+<div style="page-break-after: always"></div>
 
 Cirtas Systems, Developer in Test, Winter 2010 to Summer 2011
 -------------------------------------------------------------
@@ -204,6 +208,8 @@ that the website administrator could more easily update product availabilities.
 I helped a company develop and maintain websites for various clients. The
 relevant technologies were the LAMP stack and MySQL.
 
+<div style="page-break-after: always"></div>
+
 Undergraduate Research, GaTech
 ------------------------------
 
@@ -244,6 +250,8 @@ _documentation_
 
 * utilized and developed documentation for various network/OS security tools
 * customized a MediaWiki server installation under Red Hat
+
+<div style="page-break-after: always"></div>
 
 SKILLSET
 ========
@@ -307,6 +315,8 @@ _programming_
 - CMake, CTest, macros and functions, custom targets/commands,
   installation mechanics
 
+<div style="page-break-after: always"></div>
+
 _platforms_
 
 - systemd, service unit files
@@ -349,18 +359,19 @@ Axcient
 - Kevin Hoffman, CTO
 - Justin Moore, Founder and CEO
 - Anuradha Krishnan, VP of Engineering
-- Aaron Brown, Lead Developer
+- Aaron Brown, Senior Software Engineer
 
 Riverbed Technology
 -------------------
 
-- Greg Taleck / Richard Hefner, Engineering Managers
+- Greg Taleck, Engineering Manager
 - Vivasvat Keswani, Director of Engineering
-- Ka-Hing Cheung / Zoheb Shivani / Salil Gokhale, Members of Technical Staff
+- Ka-Hing Cheung and Zoheb Shivani, Members of Technical Staff
 
 Cirtas Systems
 --------------
 
+- Gary Messiana, CEO
 - Dan Decasper, President of Engineering
 - Allen Samuels, Chief Architect
-- Shiva Ankam / Olaf Manzcak / Sandeep Ranade, Engineers
+- Shiva Ankam, Engineer
