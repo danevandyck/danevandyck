@@ -11,114 +11,90 @@ EXPERIENCE
 Axcient
 -------
 
-### Software Engineer, Fall 2012 to 2016
+### Lead Software Engineer, 2018
 
 ### Senior Software Engineer, 2016 to 2018
 
-### Lead Software Engineer, 2018
+### Software Engineer, Fall 2012 to 2016
 
-_technical leadership of Axcient's Storage and Recovery Cloud_
+_technical leadership of Axcient's Fusion platform_ 
 
-Axcient provides end-to-end Disaster Recovery as a Service, beginning with the
-replication of protected devices and extending to file and folder recovery,
-restore point export and site failover. The Storage and Recovery Cloud is the
-core of that service, exposing secure ReSTful interfaces to replication
-clients, end users and the UI. I have contributed to or led the development
-teams responsible for building it. The relevant technical domains are
-filesystems, virtualization, networking, deduplicated storage and web
-services.
+Axcient provides disaster recovery as a service in the public cloud. Fusion is
+the core of that service, exposing secure RESTful interfaces to replication
+clients, end users and user interfaces. Relevant technical domains are
+filesystems, virtualization, networking, deduplicated storage and web services.
 
-_technical guidance_
+_leadership_
 
-- technical guidance of a distributed team of seven engineers of mixed
-  experience
-- architectural and operational oversight and codebase maintenance
+As the team lead of Fusion, I provided technical guidance to a distributed team
+of seven engineers, and maintained architectural and operational oversight of
+the public cloud platform for Axcient's DRaaS offering.
+
 - regular feedback sessions with team members
 - documentation policies facilitating onboarding and transfer of information
 - test automation policies supporting a regular release cadence
 - devops policies supporting continuous integration without SREs
-
-_planning_
-
-- maintenance of a multi-quarter roadmap with product and engineering
-  leadership
-- daily backlog refinement and prioritization
-- weekly escalation and bug scrubs with support and QA
-- issue tracking system workflow and board design
+- maintenance of a roadmap with product and engineering leadership
+- backlog refinement and prioritization
+- escalation and bug scrubs with support and QA
 
 _multi-tenant overlay networking_
 
-- overlay networking in a public cloud VPC without broadcast support
-- overlay networking without tunnelling via IPv4/6 address translation
-- support for live additions of overlay network participants (guests)
-- support for live additions of network fabric participants (hosts)
+Implementation of a multitenant layer three overlay network in the public
+cloud, clearing the chief technical barrier to COGS rearchitecture of the
+Fusion platform. Design, prototyping and oversight of development.
+
+- overlay networking in the public cloud without broadcast support or
+  tunnelling
+- support for live additions of overlay (guests) and fabric (hosts)
+  participants
 - agnostic with respect to the layout of guests on hosts
 - overlay network support for egress and ingress traffic
 - overlay network support for DNS and DHCP services
 
+<div style="page-break-after: always"></div>
+
 _zero-amplification block storage_
+
+Design and development of a novel block store schema to eliminate read
+amplification, enabling use of Fusion block storage as a backing store for
+virtual machines.
 
 - block storage index and object formats supporting zero-amplification reads
 - a block storage object keyspace supporting unbounded operation throughput
-- a concurrent, performant C++ block storage client interface and Python
-  extension
+- a performant C++ block storage client interface and Python extension
 - block index schema optimization reducing aggregate storage size by 2x
-
-<div style="page-break-after: always"></div>
-
-_virtual block device driver_
-
-- read-write network block device (NBD) backed by remote block storage
-- persistent read/write caching and adaptive prefetching
-- explicit prefetching of particular extents through socket commands
-- write barriers supporting consistent storage for e.g. virtual machines
-- multiple connections supporting virtual machine migration
 
 _live migration of block storage_
 
-- live migration to new block storage index and object storage formats of
-  petabytes of protected data for hundreds of customers
+Design and oversight of the live migration and verification of Fusion block
+storage to a new block storage schema.
+
+- migration of petabytes of protected data and tens of billions of block
+  indices for hundreds of customers
 - throughput approaching five gigabytes per second and hundreds of thousands of
-  block indices per second over thousands of concurrent nodes
+  block indices per second over thousands of concurrent executors
 
-_distributed task queue_
+_virtual block device driver_
 
-- a distributed, leaderless task queue
-- consistent and responsive task ownership at scale
-- automatic detection and reassignment of dead tasks via keep-alives
-- ReSTful client APIs, long-polling workers
+Presentation of Fusion block storage as a logical block device, providing
+storage for file and folder recovery and virtualization usecases. Design,
+oversight of development and performance optimization.
+
+- read-write network block device (NBD) backed by remote block storage
+- persistent read/write caching and adaptive prefetching
+- write barriers supporting consistent storage for e.g. virtual machines
 
 _file and folder recovery_
 
-- ReSTful HTTP interface supporting browsing, downloads and streaming archive
-  downloads at throughputs approaching one hundred megabits
-- partition and filesystem detection supporting common flavors
-- prefetching of special files/attributes supporting performant access to
-  filesystem roots
-- file data and directory index extent identification and prefetching
-  supporting performant browsing and file download
-- pipelined prefetch/traversal/read stages front-loading I/O for archive
-  downloads
+File and folder browsing and download of restore points through secure RESTful
+APIs. Design and co-development.
 
-_disk image export_
-
-- rapid synthesis of protected disk images from block storage for download
-  and physical export
-- single stream throughput approaching one GB per second to a single S3 object
-- orchestration infrastructure supporting concurrent export of many disk images
-
-_build infrastructure_
-
-- design and implementation of packaging infrastructure
-  * per-target dependency maps generated at configuration time
-  * per-target installation scripts generated at configuration time
-  * transitive installation of package component dependencies to package
-  * runpath modification of packaged shared libraries and binaries
-  * generation and installation of soname symlinks in packages
-- addition of custom targets supporting complex artifact types
-  * protobuf libraries, Python extensions, pypi package archives
-- derivation of artifact versions from VCS tags
-- a continuous integration architecture supporting all-or-nothing deployments
+- RESTful HTTP interface secured by token-based client authorization
+- supporting browsing, downloads and streaming archive downloads
+- support for various common partition and filesystem types
+- NTFS attribute extent identification and prefetching
+- pipelined architecture front-loading high-latency I/O
 
 <div style="page-break-after: always"></div>
 
@@ -127,16 +103,15 @@ Riverbed Technology, Software Engineer, Summer 2011 to Fall 2012
 
 _software development for Riverbed's Whitewater Cloud Storage Gateway_
 
-Whitewater was a NAS appliance backed by public object storage intending to
-replace tape as a backup software target. The Whitewater filesystem was
-transactional, supporting rollback on failure or unplanned shutdown. Memory
-arena management for caching and consistent garbage collection were primary
-concepts, as was deduplication. My primary responsibilities were addressing
-bugs and performance problems.
+Whitewater was a NAS appliance backed by public object storage. The Whitewater
+filesystem was transactional, supporting rollback on failure or unplanned
+shutdown. Memory arena management for caching and consistent garbage collection
+were primary concepts, as was deduplication. My primary responsibilities were
+addressing bugs and performance problems.
 
 _reduction of transaction log replay time in the event of a crash_
 
-- design and implementation of an transaction log checkpointing scheme
+- design and development of an transaction log checkpointing scheme
 - decoupling log replay time from log rotation frequency
 
 _2x speedup of large file deletions_
@@ -173,10 +148,9 @@ Cirtas Systems, Developer in Test, Winter 2010 to Summer 2011
 _performance testing and automation for an early-stage cloud storage startup_
 
 Cirtas's Bluejet Cloud Storage Controller appliance implemented a network block
-storage service, exposing iSCSI LUNs backed by public object storage and
-APIs and UI to manage them. Relevant concepts were iSCSI, deduplication
-and snapshots. My work focused on performance testing, including data
-generation and metrics collection.
+storage service, exposing iSCSI LUNs backed by public object storage. Relevant
+concepts were iSCSI, deduplication and snapshots. I spent most of my time
+performance and load testing.
 
 _pseudo-random data generation_
 
@@ -273,21 +247,20 @@ _filesystems_
 _transactions_
 
 - transaction logging, log replay
-- two-phase commit, transaction abort
+- two-phase commit, transaction rollback
 
 _posix storage_
 
-- durability, fsync, msync, buffer cache, write back, write barrier
-- shared memory, memory mapping, copy on write
+- durability, fsync, write barrier
+- memory mapping, msync, buffer cache, write back
 
 _HTTP_
 
-- ReSTful interfaces, long-polling
+- RESTful interfaces, long-polling
 - connection pooling, websockets, ranged GET
 - HTTP status codes, redirection, retryable status codes
 - authentication, client certificate checking
-- authorization, authorization tokens, scope of authorization,
-  token time-to-live, macaroons, JSON Web Tokens, OAuth2
+- authorization, auth tokens, scope of authorization, macaroons, OAuth2
 
 _databases_
 
@@ -298,43 +271,40 @@ _databases_
 _networking_
 
 - iptables, connection tracking, masquerading, packet marking, policy based
-  routing, destination NAT
+  routing
 - IPv6, SIIT (EAMT)
-- bridge interfaces, proxy arp, tun/tap, network namespaces
+- bridge interfaces, proxy arp, network namespaces
 
 _programming_
 
 - thread parallelism, data races, deadlocks, mutexes, condition variables
-- non-blocking socket I/O, socket timeouts, `select`
+- non-blocking socket I/O, socket timeouts, select
 - object oriented programming, data structure immutability, RAII
-- C++ 11/14, templates, exception safety, move semantics, rule of three/five,
-  threading library, atomics
-- Python 3, context managers, iteration interface, `asyncio`, `tornado`,
-  threading, concurrent futures, multiprocessing, requests, logging,
+- C++ 11/14, templates, exception safety, move semantics, threading library,
+  atomics
+- Python 3, context managers, asyncio, tornado, threading, multiprocessing,
   C/C++ extensions
-- CMake, CTest, macros and functions, custom targets/commands,
-  installation mechanics
+- CMake, CTest, macros and functions, custom targets/commands
 
 <div style="page-break-after: always"></div>
 
 _platforms_
 
 - systemd, service unit files
-- shared libraries, linking, runpath modification, ld library path, ldconfig
-- debian packaging, control files, changelog, version ordering
+- shared libraries, linking, runpath modification, ldconfig
+- debian packaging, version ordering
 
 _AWS services_
 
-- S3, ranged GETs, multipart uploads, object tagging, object lifecycles,
-  storage classes, intelligent tiering
+- S3, multipart uploads, object tagging, object lifecycles, storage classes,
+  intelligent tiering, key design
 - DynamoDB, write/read capacity utilization, batched writes, provisioned
   capacity, attributes, background repartitioning, key design
 - Lambda, SQS triggers, log groups, execution environment
 
 _miscellaneous_
 
-- Etcd v3, MultiOp transactions, prefix-based event watching,
-  leases/keep-alives
+- Etcd v3, MultiOp transactions, prefix-based event watching, leases
 - NBDKit, flush semantics
 - HAProxy, SSL termination, ACLs, client verification, request timing
 
