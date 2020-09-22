@@ -26,7 +26,7 @@ filesystems, virtualization, networking, deduplicated storage and web services.
 
 _leadership_
 
-As the team lead of Fusion, I provided technical guidance to a distributed team
+As a team lead, I provided technical guidance to a distributed team
 of seven engineers, and maintained architectural and operational oversight of
 the public cloud platform for Axcient's DRaaS offering.
 
@@ -318,30 +318,3 @@ Georgia Institute of Technology
 - Bachelor of Science, Computer Science, _summa cum laude_
   * concentrations: networking and platforms
   * highest ranking member of graduating class, College of Computing
-
-
-REFERENCES
-==========
-
-Axcient
--------
-
-- Kevin Hoffman, CTO
-- Justin Moore, Founder and CEO
-- Anuradha Krishnan, VP of Engineering
-- Aaron Brown, Senior Software Engineer
-
-Riverbed Technology
--------------------
-
-- Greg Taleck, Engineering Manager
-- Vivasvat Keswani, Director of Engineering
-- Ka-Hing Cheung and Zoheb Shivani, Members of Technical Staff
-
-Cirtas Systems
---------------
-
-- Gary Messiana, CEO
-- Dan Decasper, President of Engineering
-- Allen Samuels, Chief Architect
-- Shiva Ankam, Engineer
